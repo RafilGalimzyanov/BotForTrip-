@@ -47,10 +47,11 @@ async def answer_q2(message: types.Message, state: FSMContext):
 async def answer_q3(message: types.Message, state: FSMContext):
     answer = message.text
     if (answer in "Да" or answer in "да" or answer in "Все" or answer in "все"):
-        await message.answer("Ваша поездка зарегистрирована.\n <b>Опубликовать в беседе?</b> \n")
+        await message.answer("Ваша поездка зарегистрирована.\n "
+                             "<b>Опубликовать в беседе?</b> \n")
         await Trip.next()
     else:
-        await message.answer("Пройдите процедуру регистрации с начала :) \n")
+        await message.answer("В таком случае пройдите процедуру регистрации с начала :) \n")
         await state.finish()
 
 
