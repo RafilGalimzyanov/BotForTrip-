@@ -64,11 +64,12 @@ async def answer_q4(message: types.Message, state: FSMContext):
     message_id = data.get("message_id")
     user_id = int(message.from_user.id)
     click = hlink('Откликнуться', f'tg://user?id={user_id}')
+
     await bot.send_message(-1001138699096,
                            f'<b>ПОЕЗДКА</b>\n'
                            f'Водитель: {name_client}\n'
                            f'Маршрут: {answer_date}\n'
                            f'Время отправления: {answer_time}\n'
                            f'{click}')
-    await message.answer("Поездка успешно опубликована")
+    await message.answer("Ваша поездка успешно опубликована.")
     await state.finish()
