@@ -6,6 +6,10 @@ from loader import dp
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
+
+    '''
+    Сохраняем id-шник водителя для обратной связи
+    '''
     driver_id = message.from_user.id
 
     keyboard = types.InlineKeyboardMarkup()
